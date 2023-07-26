@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { AddCategory } from "./components/AddCategory";
-import { GifGrid } from "./components/GifGrid";
+import { AddCategory, GifGrid } from "./components"; // Importacion a archivo de barril index.js, este nos sirve para ordenar nuestros imports, no se escribe /index ya que se toma de forma implicita
+
 
 
 export const GifExpertApp = () => {
@@ -8,7 +8,7 @@ export const GifExpertApp = () => {
 
   const onAddCategory = (event) => {
     if(categories.includes(event.trim())) return;
-      setCategories([...categories,event]);  
+      setCategories([event,...categories]);  
   }
 
   return (

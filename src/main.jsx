@@ -6,7 +6,7 @@ import './styles.css'; // Estilo global
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+ <React.StrictMode>
     <GifExpertApp/>
-  </React.StrictMode>,
+  </React.StrictMode>, 
 )
