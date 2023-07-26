@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 
 
 export const GifExpertApp = () => {
   const [categories, setCategories] = useState(['One Punch']);
 
-  const onAddCategory = () => {
-    /* const anadir = setCategories(categories => categories.concat('Valorant')); */
-   /*  const anadir = setCategories([...categories,'Valorant']); */
-      setCategories([...categories,'Valorant']);
+  const onAddCategory = (event) => {
+    if(categories.includes(event.trim())) return;
+      setCategories([...categories,event]);  
   }
 
   return (
@@ -16,12 +16,17 @@ export const GifExpertApp = () => {
    {/*  titulo */}
    
     <h1>GifExpertApp</h1>
-    <AddCategory setCategories={setCategories}/>
-    <button onClick={onAddCategory}>Agregar</button>
-    <ol> {/*  Order list que crea como un listado con numeros */}
-      {categories.map((index) => <li key={index}> {index} </li>)}
+    <AddCategory 
+    /* setCategories={setCategories} */
+    onNewCategory = {(event) => onAddCategory(event)}
 
-    </ol>
+    />
+    <button onClick={onAddCategory}>Agregar</button>
+    
+      {categories.map((category) => 
+       (<GifGrid key={category} category={category}/>)
+      )}
+
     </>
   )
 }
