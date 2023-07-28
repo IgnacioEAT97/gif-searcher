@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Probando GifItem debe generar snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="Kakaroto"
+      src="https://kakaroto/goku.jpg"
+    />
+    <p>
+      Kakaroto
+    </p>
+  </div>
+</div>
+`;
